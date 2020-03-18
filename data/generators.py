@@ -100,7 +100,7 @@ class DataGenerator(CachingGenerator):
         if data is None:
             try:
                 with open(path) as f:
-                    data = yaml.load(f)
+                    data = yaml.full_load(f)
             except Exception as e:
                 logger.error('Could not process %s\n%s', path, e,
                              exc_info=self.settings.get('DEBUG', False))
